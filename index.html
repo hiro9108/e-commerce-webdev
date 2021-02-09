@@ -4,13 +4,96 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/inital.css" />
-    <link rel="stylesheet" href="./styles/top.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/features.css" />
     <link rel="stylesheet" href="./styles/bottom.css" />
-    <title>e-commerce</title>
+    <script
+      src="https://kit.fontawesome.com/5bf5434648.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Ghost Restaurant</title>
   </head>
   <body>
-    <h1>e-commerce</h1>
-    <script src="./script.js"></script>
+    <!-- header section -->
+    <header>
+      <nav class="navbar">
+        <div class="logo-box">
+          <div>Ghost Restaurant</div>
+        </div>
+        <ul class="nav-link">
+          <li id="shopping-cart"><i class="fas fa-shopping-cart"></i></li>
+          <li id="shopping-cart-close" class="toggle">
+            <i class="fas fa-ghost"></i>
+          </li>
+        </ul>
+      </nav>
+      <div class="order-items toggle" id="order-items">
+        <div class="order-container">
+          <h3>your order</h3>
+          <div class="order-item-list">
+            <div class="order-item">
+              <div class="order-img-box">
+                <img src="./assets/images/product01.jpeg" alt="order-img" />
+              </div>
+              <div class="order-content-box">
+                <div>Pizza</div>
+                <div>$<span>222.2</span></div>
+                <div>
+                  <input type="number" class="number" placeholder="amount" />
+                </div>
+                <div><i class="fas fa-trash-alt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="order-item-list">
+            <div class="order-item">
+              <div class="order-img-box">
+                <img src="./assets/images/product01.jpeg" alt="order-img" />
+              </div>
+              <div class="order-content-box">
+                <div>Pizza</div>
+                <div>$<span>222.2</span></div>
+                <div>
+                  <input type="number" class="number" placeholder="amount" />
+                </div>
+                <div><i class="fas fa-trash-alt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="order-total">
+            <div class="total-amount">Total: $<span>222.2</span></div>
+          </div>
+          <div class="order-button">
+            <div class="clear-button">Clear Cart</div>
+            <div class="checkout-button">Check Out</div>
+          </div>
+        </div>
+      </div>
+      <div class="top-content">
+        <h1>Ghost Restaurant</h1>
+      </div>
+    </header>
+
+    <!-- features section -->
+    <section class="features">
+      <h2 class="title">our speciality</h2>
+      <div class="cards" id="cards">
+        <!-- Iterate card object from api -->
+      </div>
+    </section>
+
+    <!-- bottom.css -->
+    <!--  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+      integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/animation.js"></script>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/features.js"></script>
+    <script src="./scripts/bottom.js"></script>
   </body>
 </html>
