@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/features.css" />
     <link rel="stylesheet" href="./styles/bottom.css" />
+    <link rel="stylesheet" href="./styles/products.css">
     <script
       src="https://kit.fontawesome.com/5bf5434648.js"
       crossorigin="anonymous"
@@ -30,9 +31,9 @@
         </ul>
       </nav>
       <div class="order-items toggle" id="order-items">
-        <div class="order-container">
+        <div class="order-container" id="order-container">
           <h3>your order</h3>
-          <div class="order-item-list">
+          <div class="order-item-list" >
             <div class="order-item">
               <div class="order-img-box">
                 <img src="./assets/images/product01.jpeg" alt="order-img" />
@@ -84,6 +85,14 @@
       </div>
     </section>
 
+    <!-- product section -->
+    <section class="products">
+      <h2 class="title">our speciality</h2>
+      <div class="cards" id="product-cards">
+        <!-- Iterate card object from api -->
+      </div>
+    </section>
+
     <!-- bottom.css -->
     <!--  -->
     <script
@@ -95,5 +104,6 @@
     <script src="./scripts/header.js"></script>
     <script src="./scripts/features.js"></script>
     <script src="./scripts/bottom.js"></script>
+    <script src="./scripts/products.js"></script>
   </body>
 </html>
