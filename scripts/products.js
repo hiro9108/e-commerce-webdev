@@ -4,6 +4,16 @@
   const orderList = document.getElementById("order-list");
   const clearButton = document.getElementById("clear-button");
   const checkoutButton = document.getElementById("checkout-button");
+  const search = document.getElementById("search");
+
+  let itemArr = [];
+
+  search.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchValue = e.target.children[0].value;
+    searchItemHandler(itemArr, searchValue);
+    e.target.children[0].value = "";
+  });
 
   checkoutButton.addEventListener("click", () => {
     if (orderClearHandler()) alert("Your order is complited!");
@@ -11,6 +21,49 @@
   clearButton.addEventListener("click", () => {
     orderClearHandler();
   });
+
+  const createElementHandler = (array) => {
+    array.forEach((el) => {
+      cards.innerHTML += `
+        <div class="card">
+          <div class="img-box">
+            <img src=${el.image_url} alt=${el.name} />
+          </div>
+          <div class="content-box">
+            <h3>${el.name}</h3>
+            <p>${el.description}</p>
+          </div>
+          <div class="product-footer">
+            <span>$${el.price}</span>
+            <div class="btn add-cart" >Add Cart</div>
+          </div>
+        </div>
+      `;
+    });
+  };
+
+  const searchItemHandler = (searchArr, target) => {
+    cards.innerHTML = "";
+    searchArr.forEach((el) => {
+      if (el.name.includes(target.toLowerCase())) {
+        cards.innerHTML += `
+          <div class="card">
+            <div class="img-box">
+              <img src=${el.image_url} alt=${el.name} />
+            </div>
+            <div class="content-box">
+              <h3>${el.name}</h3>
+              <p>${el.description}</p>
+            </div>
+            <div class="product-footer">
+              <span>$${el.price}</span>
+              <div class="btn add-cart" >Add Cart</div>
+            </div>
+          </div>
+        `;
+      }
+    });
+  };
 
   const orderClearHandler = () => {
     if (parseInt(totalPrice.innerText)) {
@@ -70,7 +123,6 @@
         </div>
       </div>
     `;
-    // let orderContainer = document.querySelector("#order-container");
     orderList.appendChild(div);
 
     // Add total price
@@ -89,25 +141,8 @@
 
   response
     .then((result) => {
-      result.forEach((el) => {
-        let div = document.createElement("div");
-        div.innerHTML = `
-          <div class="card">
-            <div class="img-box">
-              <img src=${el.image_url} alt=${el.name} />
-            </div>
-            <div class="content-box">
-              <h3>${el.name}</h3>
-              <p>${el.description}</p>
-            </div>
-            <div class="product-footer">
-              <span>$${el.price}</span>
-              <div class="btn add-cart" >Add Cart</div>
-            </div>
-          </div>
-        `;
-        cards.appendChild(div);
-      });
+      itemArr = result; // Get items data
+      createElementHandler(itemArr);
     })
     .then(() => {
       const addCartButton = document.querySelectorAll(".add-cart");
