@@ -1,0 +1,16 @@
+/* products sections */
+
+.products .search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 1rem;
+}
+.add-cart {
+}

@@ -30,3 +30,11 @@ img {
   width: 100%;
   display: block;
 }
+
+section {
+  margin: 5rem 0;
+}
+
+i {
+  cursor: pointer;
+}
