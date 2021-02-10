@@ -1,5 +1,5 @@
 (function () {
-  const cards = document.getElementById("cards");
+  const cards = document.getElementById("feature-cards");
 
   const response = fetch("https://e-commerce-webdev.herokuapp.com/api/features")
     .then((res) => res.json())
