@@ -26,6 +26,7 @@ header .navbar {
 }
 
 header .navbar .nav-link {
+  color: var(--black);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -33,7 +34,6 @@ header .navbar .nav-link {
 
 header .navbar .nav-link li {
   font-size: 2rem;
-  cursor: pointer;
 }
 
 header .order-items {
@@ -49,19 +49,15 @@ header .order-items {
 }
 
 header .order-container {
-  width: 50vw;
-  height: 60vh;
-  background-color: rgba(211, 211, 211, 0.335);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 300px;
-  max-width: 500px;
+  max-width: 80vw;
 }
 
 header .order-item-list {
-  width: 100%;
   border: 1px solid rgba(50, 50, 50, 0.5);
   margin: 1rem;
   border-radius: 0.5rem;
@@ -75,6 +71,13 @@ header .order-item {
 
 header .order-total {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .order-total .total-amount {
+  font-weight: 800;
+  margin-left: 3rem;
 }
 
 header .order-item .order-img-box {
@@ -95,9 +98,7 @@ header .order-button {
   margin: 1rem;
 }
 
-header .clear-button {
-  margin: 0 1rem;
-}
+header .clear-button,
 header .checkout-button {
   margin: 0 1rem;
 }
