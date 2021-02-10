@@ -1,0 +1,43 @@
+.btn {
+  color: var(--black);
+  font-weight: 900;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+input[type="number"] {
+  width: 100px;
+  outline: none;
+  border: 1px solid var(--black);
+}
+
+input[type="search"] {
+  min-width: 300px;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+i {
+  font-size: 2rem;
+  transition: all 0.2s linear;
+}
+
+i:hover {
+  color: var(--icon-hover);
+  transform: scale(1.2) translateY(-2px);
+}
