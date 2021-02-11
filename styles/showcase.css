@@ -15,6 +15,7 @@
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
+  z-index: 10;
 }
 
 .showcase .box .content {
