@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -100;
 }
 
 .showcase .box {
@@ -14,7 +15,6 @@
   left: calc(50% -150px);
   width: 200px;
   height: 200px;
-  transform-style: preserve-3d;
 }
 
 .showcase .box .content {
@@ -25,6 +25,7 @@
   height: 100%;
   transform-style: preserve-3d;
   transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px, -50px, 150px);
+  z-index: -1;
 }
 
 .showcase .box .content span video {
@@ -34,7 +35,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 .showcase .box .content span {
@@ -46,7 +46,6 @@
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--black);
-  z-index: -1;
 }
 
 .showcase .box .content span:nth-child(1) {
