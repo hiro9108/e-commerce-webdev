@@ -2,9 +2,6 @@
 header {
   position: relative;
   height: 100vh;
-  /* background-image: url("../assets/images/header.jpeg");
-  background-position: center;
-  background-size: cover; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +19,7 @@ header .navbar {
   justify-content: space-between;
   align-items: center;
   background-color: lightgray;
-  z-index: 1000;
+  z-index: 100;
 }
 
 header .navbar .nav-link {
@@ -45,7 +42,7 @@ header .order-items {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 99;
 }
 
 header .order-container {
