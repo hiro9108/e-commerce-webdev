@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/features.css" />
     <link rel="stylesheet" href="./styles/showcase.css" />
-    <link rel="stylesheet" href="./styles/bottom.css" />
     <link rel="stylesheet" href="./styles/products.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
     <script
       src="https://kit.fontawesome.com/5bf5434648.js"
       crossorigin="anonymous"
@@ -24,12 +24,12 @@
     <header>
       <nav class="navbar">
         <div class="logo-box">
-          <div>GHOST RESTAURANT</div>
+          <div><i class="fas fa-ghost"></i> GHOST RESTAURANT</div>
         </div>
         <ul class="nav-link">
           <li id="shopping-cart"><i class="fas fa-shopping-cart"></i></li>
           <li id="shopping-cart-close" class="toggle">
-            <i class="fas fa-ghost"></i>
+            <i class="fas fa-times"></i>
           </li>
         </ul>
       </nav>
@@ -44,11 +44,6 @@
             </div>
           </div>
           <!-- Iterate order object from orderItem -->
-          <!-- <div class="order-total">
-            <div class="total-amount">
-              Total: $<span id="totalPrice">0</span>
-            </div>
-          </div> -->
           <div class="order-button">
             <div class="btn clear-button" id="clear-button">Clear</div>
             <div class="btn checkout-button" id="checkout-button">Checkout</div>
@@ -56,7 +51,10 @@
         </div>
       </div>
       <div class="top-content">
-        <h1>Ghost Restaurant</h1>
+        <div class="sphere">
+          <h1>Food<br />Delivery</h1>
+          <video src="./assets/videos/header_1.mp4" autoplay muted loop></video>
+        </div>
       </div>
     </header>
 
@@ -70,7 +68,38 @@
 
     <!-- showcase section -->
     <section class="showcase">
-      <h2 class="title">show case</h2>
+      <div class="box">
+        <div class="content">
+          <span
+            ><video
+              class="video"
+              src="./assets/videos/video_9.mp4"
+              autoplay
+              muted
+              loop
+            ></video
+          ></span>
+          <span
+            ><video
+              class="video"
+              src="./assets/videos/video_9.mp4"
+              autoplay
+              muted
+              loop
+            ></video
+          ></span>
+          <span
+            ><video
+              class="video"
+              src="./assets/videos/video_9.mp4"
+              autoplay
+              muted
+              loop
+            ></video
+          ></span>
+        </div>
+      </div>
+      <div class="btn showcase-btn" id="showcase-btn">See More</div>
     </section>
 
     <!-- product section -->
@@ -84,8 +113,41 @@
       </div>
     </section>
 
-    <!-- bottom.css -->
-    <!--  -->
+    <!-- footer section -->
+    <footer class="footer">
+      <div class="footer-box">
+        <ul class="footer-links">
+          <li>
+            <a href="#" class="footer-link">Menu</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Chef</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Access</a>
+          </li>
+        </ul>
+        <ul class="footer-icons">
+          <li>
+            <a href="#" class="footer-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-icon">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright">© 2021 Ghost restaurant inc.</p>
+      </div>
+    </footer>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
       integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
@@ -94,7 +156,7 @@
     <script src="./scripts/animation.js"></script>
     <script src="./scripts/header.js"></script>
     <script src="./scripts/features.js"></script>
-    <script src="./scripts/bottom.js"></script>
+    <script src="./scripts/showcase.js"></script>
     <script src="./scripts/products.js"></script>
   </body>
 </html>

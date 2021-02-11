@@ -1,16 +1,61 @@
 (function () {
+  let itemArr = [];
+
+  const PRODUCTS_API = "https://e-commerce-webdev.herokuapp.com/api/products";
+
   const cards = document.getElementById("product-cards");
   const totalPrice = document.getElementById("totalPrice");
   const orderList = document.getElementById("order-list");
   const clearButton = document.getElementById("clear-button");
   const checkoutButton = document.getElementById("checkout-button");
+  const search = document.getElementById("search");
+
+  // Add Event Handler
+  search.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchValue = e.target.children[0].value;
+    searchItemHandler(itemArr, searchValue);
+    e.target.children[0].value = "";
+  });
 
   checkoutButton.addEventListener("click", () => {
-    if (orderClearHandler()) alert("Your order is complited!");
+    if (orderClearHandler()) alert("Your order is completed!");
   });
   clearButton.addEventListener("click", () => {
     orderClearHandler();
   });
+
+  // Functions
+  const cardElementHtml = (el) => {
+    return `
+        <div class="card">
+          <div class="img-box">
+            <img src=${el.image_url} alt=${el.name} />
+          </div>
+          <div class="content-box">
+            <h3>${el.name}</h3>
+            <p>${el.description}</p>
+          </div>
+          <div class="product-footer">
+            <span>$${el.price}</span>
+            <div class="btn add-cart" >Add Cart</div>
+          </div>
+        </div>
+      `;
+  };
+
+  const createElementHandler = (array) => {
+    array.forEach((el) => (cards.innerHTML += cardElementHtml(el)));
+  };
+
+  const searchItemHandler = (searchArr, target) => {
+    cards.innerHTML = "";
+    searchArr.forEach((el) => {
+      if (el.name.includes(target.toLowerCase())) {
+        cards.innerHTML += cardElementHtml(el);
+      }
+    });
+  };
 
   const orderClearHandler = () => {
     if (parseInt(totalPrice.innerText)) {
@@ -19,7 +64,7 @@
       totalPrice.innerText = 0;
       return true;
     } else {
-      alert("You can add Sometings to cart!");
+      alert("You can add sometings to cart!");
     }
   };
 
@@ -70,7 +115,6 @@
         </div>
       </div>
     `;
-    // let orderContainer = document.querySelector("#order-container");
     orderList.appendChild(div);
 
     // Add total price
@@ -79,35 +123,15 @@
       parseFloat(totalPrice.innerText) + parseFloat(itemPrice);
     totalPrice.innerText = newTotalPrice;
 
-    alert("Add to cart!");
+    alert("Add the item to cart!");
   };
 
-  const response = fetch("https://e-commerce-webdev.herokuapp.com/api/products")
+  // Main Procedure
+  fetch(PRODUCTS_API)
     .then((res) => res.json())
-    .then((data) => data)
-    .catch((err) => console.log(err));
-
-  response
-    .then((result) => {
-      result.forEach((el) => {
-        let div = document.createElement("div");
-        div.innerHTML = `
-          <div class="card">
-            <div class="img-box">
-              <img src=${el.image_url} alt=${el.name} />
-            </div>
-            <div class="content-box">
-              <h3>${el.name}</h3>
-              <p>${el.description}</p>
-            </div>
-            <div class="product-footer">
-              <span>$${el.price}</span>
-              <div class="btn add-cart" >Add Cart</div>
-            </div>
-          </div>
-        `;
-        cards.appendChild(div);
-      });
+    .then((data) => {
+      itemArr = data; // Get items data
+      createElementHandler(itemArr);
     })
     .then(() => {
       const addCartButton = document.querySelectorAll(".add-cart");
@@ -125,5 +149,6 @@
           removeItemHandler(cardItemPrice, index);
         });
       });
-    });
+    })
+    .catch((err) => console.log(err));
 })();
