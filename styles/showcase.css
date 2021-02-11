@@ -1,5 +1,5 @@
-/* showcase sections */
-.showcase {
+/* showcase-box sections */
+.showcase-box {
   position: relative;
   height: 80vh;
   background-color: var(--black);
@@ -9,7 +9,7 @@
   z-index: -100;
 }
 
-.showcase .box {
+.showcase-box .box {
   position: absolute;
   top: calc(50% -150px);
   left: calc(50% -150px);
@@ -17,7 +17,7 @@
   height: 200px;
 }
 
-.showcase .box .content {
+.showcase-box .box .content {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@
   z-index: -1;
 }
 
-.showcase .box .content span video {
+.showcase-box .box .content span video {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,7 +37,7 @@
   object-fit: cover;
 }
 
-.showcase .box .content span {
+.showcase-box .box .content span {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,10 +48,10 @@
   background-color: var(--black);
 }
 
-.showcase .box .content span:nth-child(1) {
+.showcase-box .box .content span:nth-child(1) {
   transform: rotateX(0deg) translate3d(0, 0, 100px);
 }
-.showcase .box .content span:nth-child(1)::before {
+.showcase-box .box .content span:nth-child(1)::before {
   position: absolute;
   top: -30px;
   left: 0;
@@ -63,11 +63,11 @@
   opacity: 0;
   transition: all 0.5s linear;
 }
-.showcase .box .content span:hover:nth-child(1)::before {
+.showcase-box .box .content span:hover:nth-child(1)::before {
   top: 0;
   opacity: 1;
 }
-.showcase .box .content span:nth-child(1)::after {
+.showcase-box .box .content span:nth-child(1)::after {
   position: absolute;
   content: "You can delivery";
   top: -30px;
@@ -79,41 +79,43 @@
   opacity: 0;
   transition: all 1s;
 }
-.showcase .box .content span:hover:nth-child(1)::after {
+.showcase-box .box .content span:hover:nth-child(1)::after {
   top: 50%;
   opacity: 1;
 }
 
-.showcase .box .content span:nth-child(2) {
+.showcase-box .box .content span:nth-child(2) {
   transform: rotateY(90deg) translate3d(0, 0, -100px);
 }
 
-.showcase .box .content span:nth-child(3) {
+.showcase-box .box .content span:nth-child(3) {
   transform: rotateX(90deg) translate3d(0, 0, 100px);
 }
 
-.showcase .showcase-btn {
-  position: absolute;
-  bottom: 30px;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--white);
+.showcase-btn {
+  position: relative;
+  top: -50px;
+  left: 50%;
+  width: 150px;
+  text-align: center;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 600px) {
-  .showcase .box {
+  .showcase-box .box {
     width: 300px;
     height: 300px;
   }
 
-  .showcase .box .content span:nth-child(1) {
+  .showcase-box .box .content span:nth-child(1) {
     transform: rotateX(0deg) translate3d(0, 0, 150px);
   }
 
-  .showcase .box .content span:nth-child(2) {
+  .showcase-box .box .content span:nth-child(2) {
     transform: rotateY(90deg) translate3d(0, 0, -150px);
   }
 
-  .showcase .box .content span:nth-child(3) {
+  .showcase-box .box .content span:nth-child(3) {
     transform: rotateX(90deg) translate3d(0, 0, 150px);
   }
 }
