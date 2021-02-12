@@ -15,6 +15,7 @@
     e.preventDefault();
     const searchValue = e.target.children[0].value;
     searchItemHandler(itemArr, searchValue);
+    addEventToItems();
     e.target.children[0].value = "";
   });
 
@@ -69,18 +70,26 @@
   };
 
   // Add remove functions
+  let checkIndex = [];
   const removeItemHandler = (cardItemPrice, index) => {
+    // Shouldn't add event listener two times
+    if (checkIndex.some((el) => el === index)) return;
+
+    checkIndex.push(index);
     const removeItems = document.getElementById(`removeItem${index}`);
     removeItems.addEventListener("click", (e) => {
       e.target.parentElement.parentElement.parentElement.parentElement.remove();
       totalAmountHandler(cardItemPrice);
+      if (!document.querySelectorAll(".order-item").length) {
+        checkIndex = [];
+      }
     });
   };
 
   const totalAmountHandler = (cardItemPrice) => {
     // update total price
-    let itemPrice = cardItemPrice.replace("$", "");
-    let newTotalPrice =
+    const itemPrice = cardItemPrice.replace("$", "");
+    const newTotalPrice =
       parseFloat(totalPrice.innerText) - parseFloat(itemPrice);
     totalPrice.innerText = Math.round(newTotalPrice * 100) / 100;
   };
@@ -96,9 +105,9 @@
   const addItemToCart = (cardItemImage, cardItemName, cardItemPrice, index) => {
     if (checkCartHandler(cardItemName)) {
       alert("Already you added to cart!");
-      return false;
+      return;
     }
-    let div = document.createElement("div");
+    const div = document.createElement("div");
     div.classList.add("order-item-list");
     div.innerHTML = `
       <div class="order-item">
@@ -107,23 +116,38 @@
         </div>
         <div class="order-content-box">
           <div>${cardItemName}</div>
-          <div><span>${cardItemPrice}</span></div>
-          <div>
-            <input type="number" class="number" placeholder="amount" />
-          </div>
-          <div class="removeItem" id=removeItem${index}><i class="fas fa-trash-alt"></i></div>
+          <div><span class="order-price">${cardItemPrice}</span></div>
+          <div class="removeItem" id="removeItem${index}"><i class="fas fa-trash-alt"></i></div>
         </div>
       </div>
     `;
     orderList.appendChild(div);
 
     // Add total price
-    let itemPrice = cardItemPrice.replace("$", "");
-    let newTotalPrice =
+    const itemPrice = cardItemPrice.replace("$", "");
+    const newTotalPrice =
       parseFloat(totalPrice.innerText) + parseFloat(itemPrice);
     totalPrice.innerText = newTotalPrice;
 
     alert("Add the item to cart!");
+  };
+
+  const addEventToItems = () => {
+    const addCartButton = document.querySelectorAll(".add-cart");
+    addCartButton.forEach((el, index) => {
+      el.addEventListener("click", (e) => {
+        const cardItem = e.target.parentElement.parentElement;
+
+        const cardItemImage = cardItem.children[0].children[0].src;
+        const cardItemName = cardItem.children[1].children[0].innerText;
+        const cardItemPrice = cardItem.children[2].children[0].innerText;
+
+        addItemToCart(cardItemImage, cardItemName, cardItemPrice, index);
+
+        // Add remove functions
+        removeItemHandler(cardItemPrice, index);
+      });
+    });
   };
 
   // Main Procedure
@@ -134,21 +158,7 @@
       createElementHandler(itemArr);
     })
     .then(() => {
-      const addCartButton = document.querySelectorAll(".add-cart");
-      addCartButton.forEach((el, index) => {
-        el.addEventListener("click", (e) => {
-          let cardItem = e.target.parentElement.parentElement;
-
-          let cardItemImage = cardItem.children[0].children[0].src;
-          let cardItemName = cardItem.children[1].children[0].innerText;
-          let cardItemPrice = cardItem.children[2].children[0].innerText;
-
-          addItemToCart(cardItemImage, cardItemName, cardItemPrice, index);
-
-          // Add remove functions
-          removeItemHandler(cardItemPrice, index);
-        });
-      });
+      addEventToItems();
     })
     .catch((err) => console.log(err));
 })();
