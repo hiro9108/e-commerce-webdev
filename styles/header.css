@@ -2,9 +2,6 @@
 header {
   position: relative;
   height: 100vh;
-  /* background-image: url("../assets/images/header.jpeg");
-  background-position: center;
-  background-size: cover; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +18,36 @@ header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: lightgray;
-  z-index: 1000;
+  background-color: var(--black);
+  z-index: 100;
+}
+
+header .navbar .logo-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .navbar .logo-box i {
+  color: var(--white);
+  cursor: none;
+}
+header .navbar .logo-box i:hover {
+  color: var(--black);
+  transform: none;
+}
+
+header .navbar span {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-family: "Alice", serif;
+}
+@media (min-width: 600px) {
+  header .navbar span {
+    flex: 1;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
 }
 
 header .navbar .nav-link {
@@ -45,7 +70,7 @@ header .order-items {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 99;
 }
 
 header .order-container {
@@ -91,6 +116,19 @@ header .order-item .order-content-box {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+header .order-item .order-content-box {
+  font-weight: 600;
+}
+
+header .order-item .order-content-box div:nth-child(1),
+header .order-item .order-content-box div:nth-child(2) {
+  flex: 1;
+}
+
+header .order-item .order-content-box div:nth-child(2) {
+  margin: 0 0.2rem;
 }
 
 header .order-button {
