@@ -1,5 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/variables.css" />
+  <link rel="stylesheet" href="./styles/inital.css" />
+  <link rel="stylesheet" href="./styles/common.css" />
+  <link rel="stylesheet" href="./styles/layout-card.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/features.css" />
+  <link rel="stylesheet" href="./styles/showcase.css" />
+  <link rel="stylesheet" href="./styles/products.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+  <link rel="stylesheet" href="./styles/nextFeatures.css">
+  <script src="https://kit.fontawesome.com/5bf5434648.js" crossorigin="anonymous"></script>
+  <title>Ghost Restaurant</title>
+</head>
+
+<body>
+  <!-- header section -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-box">
+        <div><i class="fas fa-ghost"></i> GHOST RESTAURANT</div>
+      </div>
+      <ul class="nav-link">
+        <li id="shopping-cart"><i class="fas fa-shopping-cart"></i></li>
+        <li id="shopping-cart-close" class="toggle">
+          <i class="fas fa-times"></i>
+        </li>
+      </ul>
+    </nav>
+    <div class="order-items toggle" id="order-items">
+      <div class="order-container" id="order-container">
+        <div class="order-list" id="order-list">
+          <div class="order-total">
+            <h3>YOUR ORDERS</h3>
+            <div class="total-amount">
+              Total: $<span id="totalPrice">0</span>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,11 +83,6 @@
               </div>
             </div>
           </div>
-          <!-- Iterate order object from orderItem -->
-          <div class="order-button">
-            <div class="btn clear-button" id="clear-button">Clear</div>
-            <div class="btn checkout-button" id="checkout-button">Checkout</div>
-          </div>
         </div>
       </div>
       <div class="top-content">
@@ -62,16 +97,57 @@
           ></video>
         </div>
       </div>
-    </header>
-
-    <!-- features section -->
-    <section class="features layout-card">
-      <h2 class="title">our speciality</h2>
-      <div class="cards" id="feature-cards">
-        <!-- Iterate card object from api -->
+    </div>
+    <div class="top-content">
+      <div class="sphere">
+        <h1>Food<br />Delivery</h1>
+        <video src="./assets/videos/header_1.mp4" autoplay muted loop></video>
       </div>
-    </section>
+    </div>
+  </header>
 
+  <!-- features section -->
+  <section class="features layout-card">
+    <h2 class="title">our speciality</h2>
+    <div class="cards" id="feature-cards">
+      <!-- Iterate card object from api -->
+    </div>
+  </section>
+
+  <!-- showcase section -->
+  <section class="showcase">
+    <div class="box">
+      <div class="content">
+        <span><video class="video" src="./assets/videos/video_9.mp4" autoplay muted loop></video></span>
+        <span><video class="video" src="./assets/videos/video_9.mp4" autoplay muted loop></video></span>
+        <span><video class="video" src="./assets/videos/video_9.mp4" autoplay muted loop></video></span>
+      </div>
+    </div>
+    <div class="btn showcase-btn" id="showcase-btn">See More</div>
+  </section>
+
+  <!-- product section -->
+  <section class="products layout-card">
+    <h2 class="title">our products</h2>
+    <form class="search-form" id="search">
+      <input type="search" placeholder="Search with food..." />
+    </form>
+    <div class="cards" id="product-cards">
+      <!-- Iterate card object from api -->
+    </div>
+  </section>
+
+  <!-- Next features -->
+  <section class="nextFeatures">
+    <div class="container">
+      <div class="nextCard">
+        <div class="cuisine">
+          <div class="circle"></div>
+          <img src="./img/Churrasco.png" alt="churrasco">
+        </div>
+        <div class="info">
+          <h1 class="title"></h1>
+          <h3>cuisine</h3>
     <!-- showcase section -->
     <section class="showcase">
       <div class="showcase-box">
@@ -110,64 +186,53 @@
           </div>
         </div>
       </div>
-      <div class="btn showcase-btn" id="showcase-btn">See More</div>
-    </section>
+    </div>
+  </section>
 
-    <!-- product section -->
-    <section class="products layout-card">
-      <h2 class="title">our products</h2>
-      <form class="search-form" id="search">
-        <input type="search" placeholder="Search with food..." />
-      </form>
-      <div class="cards" id="product-cards">
-        <!-- Iterate card object from api -->
-      </div>
-    </section>
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="footer-box">
+      <ul class="footer-links">
+        <li>
+          <a href="#" class="footer-link">Menu</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Chef</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Access</a>
+        </li>
+      </ul>
+      <ul class="footer-icons">
+        <li>
+          <a href="#" class="footer-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="footer-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="footer-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="copyright">© 2021 Ghost restaurant inc.</p>
+    </div>
+  </footer>
 
-    <!-- footer section -->
-    <footer class="footer">
-      <div class="footer-box">
-        <ul class="footer-links">
-          <li>
-            <a href="#" class="footer-link">Menu</a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">Chef</a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">Access</a>
-          </li>
-        </ul>
-        <ul class="footer-icons">
-          <li>
-            <a href="#" class="footer-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-icon">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-        </ul>
-        <p class="copyright">© 2021 Ghost restaurant inc.</p>
-      </div>
-    </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+    integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+    crossorigin="anonymous"></script>
+  <script src="./scripts/animation.js"></script>
+  <script src="./scripts/header.js"></script>
+  <script src="./scripts/features.js"></script>
+  <script src="./scripts/showcase.js"></script>
+  <script src="./scripts/products.js"></script>
+  <script src="./scripts/nextFeatures.js"></script>
+</body>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
-      integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./scripts/animation.js"></script>
-    <script src="./scripts/header.js"></script>
-    <script src="./scripts/features.js"></script>
-    <script src="./scripts/showcase.js"></script>
-    <script src="./scripts/products.js"></script>
-  </body>
 </html>
