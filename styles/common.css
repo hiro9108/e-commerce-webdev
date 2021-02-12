@@ -33,6 +33,7 @@ input[type="search"] {
 }
 
 i {
+  color: var(--white);
   font-size: 2rem;
   transition: all 0.2s linear;
 }
@@ -40,4 +41,12 @@ i {
 i:hover {
   color: var(--icon-hover);
   transform: scale(1.2) translateY(-2px);
+}
+
+.removeItem i {
+  color: var(--black);
+}
+
+.removeItem i:hover {
+  color: var(--icon-hover);
 }
