@@ -20,12 +20,12 @@
     controls.enableZoom = false;
 
     let urls = [
-      "./../../assets/images/fields/posx.jpg",
-      "./../../assets/images/fields/negx.jpg",
-      "./../../assets/images/fields/posy.jpg",
-      "./../../assets/images/fields/negy.jpg",
-      "./../../assets/images/fields/posz.jpg",
-      "./../../assets/images/fields/negz.jpg",
+      "./assets/images/fields/posx.jpg",
+      "./assets/images/fields/negx.jpg",
+      "./assets/images/fields/posy.jpg",
+      "./assets/images/fields/negy.jpg",
+      "./assets/images/fields/posz.jpg",
+      "./assets/images/fields/negz.jpg",
     ];
     let loader = new THREE.CubeTextureLoader();
     scene.background = loader.load(urls);
