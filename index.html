@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/inital.css" />
+    <link rel="stylesheet" href="./styles/canvas.css" />
     <link rel="stylesheet" href="./styles/common.css" />
     <link rel="stylesheet" href="./styles/layout-card.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/showcase.css" />
     <link rel="stylesheet" href="./styles/products.css" />
-    <link rel="stylesheet" href="./styles/nextFeatures.css">
+    <link rel="stylesheet" href="./styles/nextFeatures.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <script
       src="https://kit.fontawesome.com/5bf5434648.js"
       crossorigin="anonymous"
     ></script>
+
     <title>GHOST RESTAURANT</title>
   </head>
   <body>
+    <canvas id="myCanvas"></canvas>
     <!-- header section -->
     <header>
       <nav class="navbar">
@@ -126,20 +129,20 @@
     </section>
 
     <!-- Next features -->
-  <section class="nextFeatures">
-    <div class="container">
-      <div class="nextCard">
-        <div class="cuisine">
-          <div class="circle"></div>
-          <img src="./assets/images/Churrasco.png" alt="churrasco">
-        </div>
-        <div class="info">
-          <h1 class="title"></h1>
-          <h3>cuisine</h3>
+    <section class="nextFeatures">
+      <div class="container">
+        <div class="nextCard">
+          <div class="cuisine">
+            <div class="circle"></div>
+            <img src="./assets/images/Churrasco.png" alt="churrasco" />
+          </div>
+          <div class="info">
+            <h1 class="title"></h1>
+            <h3>cuisine</h3>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!-- footer section -->
     <footer class="footer">
@@ -181,6 +184,11 @@
       integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="./scripts/controls/OrbitControls.js"></script>
+
+    <script src="./scripts/controls/canvas.js"></script>
+
     <script src="./scripts/animation.js"></script>
     <script src="./scripts/header.js"></script>
     <script src="./scripts/features.js"></script>
