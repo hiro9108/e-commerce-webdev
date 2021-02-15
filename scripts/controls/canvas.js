@@ -12,8 +12,9 @@
 
     renderer = new THREE.WebGLRenderer({
       antialias: true,
-      canvas: document.querySelector("#myCanvas"),
+      canvas: document.querySelector("#canvas"),
     });
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     let controls = new THREE.OrbitControls(camera, renderer.domElement);
