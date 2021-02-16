@@ -32,15 +32,25 @@
   width: 10rem;
   z-index: 2;
   transition: all 0.75s ease-out;
+
 }
+
+@media (max-width: 500px) {
+  .cuisine img {
+    width: 5rem;
+  }
+
+
+}
+
 
 .circle {
   width: 15rem;
   height: 15rem;
   background: linear-gradient(
     to right,
-    rgba(245, 70, 66, 0.75),
-    rgba(8, 83, 156, 0.75)
+    rgba(245, 161, 66, 0.75),
+    rgba(237, 250, 126, 0.75)
   );
   position: absolute;
   border-radius: 50%;
@@ -48,7 +58,7 @@
 }
 
 .info h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   transition: all 0.75s ease-out;
 }
 
