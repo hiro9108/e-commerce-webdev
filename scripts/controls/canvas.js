@@ -14,7 +14,7 @@
       antialias: true,
       canvas: document.querySelector("#canvas"),
     });
-    renderer.setPixelRatio(window.devicePixelRatio);
+
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     let controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -42,6 +42,10 @@
     let sphere = new THREE.Mesh(sphereGeo, sphereMaterial);
     sphere.position.set(0, 100, 0);
     scene.add(sphere);
+
+    window.addEventListener("resize", () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 
     render();
   }
