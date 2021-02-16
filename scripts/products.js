@@ -80,8 +80,10 @@
     removeItems.addEventListener("click", (e) => {
       e.target.parentElement.parentElement.parentElement.parentElement.remove();
       totalAmountHandler(cardItemPrice);
+      console.log(checkIndex);
       if (!document.querySelectorAll(".order-item").length) {
         checkIndex = [];
+        console.log(checkIndex);
       }
     });
   };
@@ -155,6 +157,7 @@
     .then((res) => res.json())
     .then((data) => {
       itemArr = data; // Get items data
+      console.log(itemArr);
       createElementHandler(itemArr);
     })
     .then(() => {
